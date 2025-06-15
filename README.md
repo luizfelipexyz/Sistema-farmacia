@@ -43,12 +43,11 @@ Agregação: A classe Estoque possui uma lista de Produto.
 Associação: VendasController se relaciona com a classe Vendas.
 
 ▶️ Como Executar
-Clone o repositório com os comandos:
+Clone o repositório com o comando:
 
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/luizfelipexyz/Sistema-farmacia
 
-Compile e execute a classe PrincipalView.
+Compile e execute a classe Principal.
 Interaja com o sistema pelo console da sua IDE ou terminal.
 
 🤖 Uso do ChatGPT
@@ -63,3 +62,9 @@ O ChatGPT foi utilizado no projeto para:
 ✅ Melhorar a estrutura e a documentação do projeto.    
 
 ✅ Implementar algumas funcionalidades, como, por exemplo, a lógica da busca por categoria.
+
+### 👥 Colaboradores
+
+- [@luizfelipexyz](https://github.com/luizfelipexyz)
+- [@Gabriellemmo](https://github.com/Gabriellemmo)
+
