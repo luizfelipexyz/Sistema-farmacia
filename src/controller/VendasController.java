@@ -32,9 +32,9 @@ public class VendasController {
                                " | PREÇO: R$" + ((float)v.getPreco()) +
                                " | CATEGORIA: " + v.getCategoria() +
                                " | FORMA DE PAGAMENTO: " + v.getFormaPagamento());
-            System.out.println("Arquivo TXT atualizado!");
-        }
-
+                            }
+                            
+        System.out.println("Arquivo TXT atualizado!");
         salvarNoArquivo();
     }
     public void salvarNoArquivo(Vendas v) {

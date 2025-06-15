@@ -1,8 +1,5 @@
 package view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import controller.Console;
 import controller.Estoque;
 import controller.VendasController;
@@ -168,11 +165,11 @@ public class PrincipalView {
                 break;
             case 2:
                 boolean temComum = false;
+
                 for (Produto p : estoque.getListaProdutos()) {
                 if (p instanceof RemedioOTC) {
                     System.out.println(p);
                     temComum=true;
-                    return;
                 }
             }
                 if (!temComum) {
@@ -181,11 +178,11 @@ public class PrincipalView {
                 break;
             case 3:
                 boolean temTarja = false;
+
                 for (Produto p : estoque.getListaProdutos()) {
                     if (p instanceof RemedioTarjaPreta) {
                         System.out.print(p);
-                        System.out.print(" RECEITA: "+((RemedioTarjaPreta) p).getReceita());
-                        return;
+                        temTarja=true;
                     }
             }
                 if (!temTarja) {
@@ -200,8 +197,7 @@ public class PrincipalView {
                 for (Produto p : estoque.getListaProdutos()) {
                     if (p.getCategoria().toLowerCase().equals(categoria)) {
                         System.out.println(p);
-                        encontrado = true;
-                        return;
+                        encontrado=true;
                     }
                 }
 
@@ -317,12 +313,20 @@ public class PrincipalView {
     }
     
     private void removerProduto(){
+        if (estoque.getListaProdutos().isEmpty()) {
+            System.out.println("Nenhum produto para remover.");
+            return;
+        }
         System.out.println("Informe o código do produto que deseja remover: ");
         int codigo = Console.lerInt();
         estoque.removerProduto(codigo);
         System.out.println("Produto removido com sucesso!");
     }
     private void alterarProduto(){
+        if (estoque.getListaProdutos().isEmpty()) {
+            System.out.println("Nenhum produto para alterar.");
+            return;
+        }
         System.out.println("Informe o código do produto que deseja alterar: ");
         int codigo = Console.lerInt();
         System.out.println("Informe oque deseja alterar (1-Nome 2-Preço 3-Categoria)");

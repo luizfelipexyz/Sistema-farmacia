@@ -1,1 +1,2 @@
-
+1;Shampoo;19.99;Higiene;Dinheiro
+2;Paracetamol;7.5;Saude;Dinheiro

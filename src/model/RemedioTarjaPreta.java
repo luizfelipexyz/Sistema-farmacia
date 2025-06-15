@@ -7,6 +7,13 @@ public class RemedioTarjaPreta extends Produto {
         this.receita = receita;
     }
     
+    public int getReceita() {
+        return receita;
+    }
+
+    public void setReceita(int receita) {
+        this.receita = receita;
+    }
     @Override
     public void vender() {
          System.out.println("| REMÉDIO TARJA PRETA VENDIDO: " + nome + 
@@ -15,14 +22,6 @@ public class RemedioTarjaPreta extends Produto {
     }
     @Override
     public String toString() {
-        return super.toString();
-    }
-
-    public int getReceita() {
-        return receita;
-    }
-
-    public void setReceita(int receita) {
-        this.receita = receita;
+        return "| CÓDIGO: "+codigo+" | PRODUTO: "+nome+" | PREÇO: "+preco+" | CATEGORIA: "+categoria+" | RECEITA: "+receita;
     }
 }
