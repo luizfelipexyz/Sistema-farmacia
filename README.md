@@ -47,7 +47,7 @@ Clone o repositório com o comando:
 
 git clone https://github.com/luizfelipexyz/Sistema-farmacia
 
-Compile e execute a classe PrincipalView.
+Compile e execute a classe Principal.
 Interaja com o sistema pelo console da sua IDE ou terminal.
 
 🤖 Uso do ChatGPT
