@@ -43,10 +43,9 @@ Agregação: A classe Estoque possui uma lista de Produto.
 Associação: VendasController se relaciona com a classe Vendas.
 
 ▶️ Como Executar
-Clone o repositório com os comandos:
+Clone o repositório com o comando:
 
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/luizfelipexyz/Sistema-farmacia
 
 Compile e execute a classe PrincipalView.
 Interaja com o sistema pelo console da sua IDE ou terminal.
