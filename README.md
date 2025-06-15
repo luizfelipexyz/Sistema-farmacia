@@ -57,6 +57,12 @@ O ChatGPT foi utilizado no projeto para:
 
 ✅ Sugestões de estrutura de código, organização e fluxo dos menus.
 
+### 👥 Colaboradores
+
+- [@luizfelipexyz](https://github.com/luizfelipexyz)
+- [@Gabriellemmo](https://github.com/Gabriellemmo)
+
+
 ✅ Ajudar na correção de bugs e exceções.
 
 ✅ Melhorar a estrutura e a documentação do projeto.    
