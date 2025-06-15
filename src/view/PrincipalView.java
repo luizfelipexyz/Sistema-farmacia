@@ -53,7 +53,7 @@ public class PrincipalView {
 
     private void menuAtendente() {
     do {
-        System.out.println("--MENU ATENDENTE--");
+        System.out.println("\n--MENU ATENDENTE--");
         System.out.println("1) Vender Produtos");
         System.out.println("2) Consultar produtos");
         System.out.println("3) Retornar");
@@ -73,7 +73,7 @@ public class PrincipalView {
 
     private void menuFarmaceutico() {
         do {
-        System.out.println("--MENU FARMACÊUTICO--");
+        System.out.println("\n--MENU FARMACÊUTICO--");
         System.out.println("1) Cadastrar produto");
         System.out.println("2) Retornar");
         System.out.print("Digite a opção: ");
@@ -90,7 +90,7 @@ public class PrincipalView {
 
     private void menuGerente() {
         do {
-        System.out.println("--MENU GERENTE--");
+        System.out.println("\n--MENU GERENTE--");
         System.out.println("1) Controlar estoque");
         System.out.println("2) Fazer relatório de vendas");
         System.out.println("3) Retornar");
@@ -167,18 +167,30 @@ public class PrincipalView {
                 estoque.listarProdutos();
                 break;
             case 2:
+                boolean temComum = false;
                 for (Produto p : estoque.getListaProdutos()) {
                 if (p instanceof RemedioOTC) {
                     System.out.println(p);
+                    temComum=true;
+                    return;
                 }
+            }
+                if (!temComum) {
+                System.out.println("Nenhum medicamento comum cadastrado.");
             }
                 break;
             case 3:
+                boolean temTarja = false;
                 for (Produto p : estoque.getListaProdutos()) {
                     if (p instanceof RemedioTarjaPreta) {
-                        System.out.println(p);
+                        System.out.print(p);
+                        System.out.print(" RECEITA: "+((RemedioTarjaPreta) p).getReceita());
+                        return;
                     }
             }
+                if (!temTarja) {
+                    System.out.println("Nenhum medicamento tarja preta cadastrado.");
+                }
                 break;
             case 4:
                 System.out.println("Informe a categoria: (Higiene, Saúde, Comida)");
@@ -189,6 +201,7 @@ public class PrincipalView {
                     if (p.getCategoria().toLowerCase().equals(categoria)) {
                         System.out.println(p);
                         encontrado = true;
+                        return;
                     }
                 }
 
@@ -198,8 +211,7 @@ public class PrincipalView {
                 break;
 
             case 5:
-                menuAtendente();
-                break;
+                return;
             default:
                 System.out.println("Opção inválida, digite novamente.");
         }
@@ -296,7 +308,7 @@ public class PrincipalView {
             case 2-> removerProduto();
             case 3-> alterarProduto();
             case 4-> consultarProdutos();
-            case 5-> exibirMenu();
+            case 5-> { return; }
             default -> System.out.println("Opção inválida, digite novamente");
         }
     }
