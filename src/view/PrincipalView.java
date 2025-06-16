@@ -12,7 +12,6 @@ public class PrincipalView {
     Estoque estoque = new Estoque();
     private VendasController controller = new VendasController();
 
-
     int opcao;
     public void iniciar() {
         controller.limparArquivo();
@@ -61,7 +60,7 @@ public class PrincipalView {
             case 1 -> venderProdutos();
             case 2 -> consultarProdutos();
             case 3 -> { return; }
-            default -> System.out.println("Opção inválida, tente novamente.");
+            default -> System.err.println("Opção inválida, tente novamente.");
         }
 
     } while (opcao != 5);
@@ -79,7 +78,7 @@ public class PrincipalView {
         switch (opcao) {
             case 1 -> cadastrarProduto();
             case 2 -> { return; }
-            default -> System.out.println("Opção inválida, tente novamente.");
+            default -> System.err.println("Opção inválida, tente novamente.");
         }
 
     } while (opcao != 3);
@@ -98,7 +97,7 @@ public class PrincipalView {
             case 1 -> controlarEstoque();
             case 2 -> relatorioVendas();
             case 3 -> { return; }
-            default -> System.out.println("Opção inválida, tente novamente.");
+            default -> System.err.println("Opção inválida, tente novamente.");
         }
 
     } while (opcao != 3);
@@ -165,7 +164,6 @@ public class PrincipalView {
                 break;
             case 2:
                 boolean temComum = false;
-
                 for (Produto p : estoque.getListaProdutos()) {
                 if (p instanceof RemedioOTC) {
                     System.out.println(p);
@@ -178,7 +176,6 @@ public class PrincipalView {
                 break;
             case 3:
                 boolean temTarja = false;
-
                 for (Produto p : estoque.getListaProdutos()) {
                     if (p instanceof RemedioTarjaPreta) {
                         System.out.print(p);
@@ -197,7 +194,7 @@ public class PrincipalView {
                 for (Produto p : estoque.getListaProdutos()) {
                     if (p.getCategoria().toLowerCase().equals(categoria)) {
                         System.out.println(p);
-                        encontrado=true;
+                        encontrado = true;
                     }
                 }
 
@@ -209,7 +206,7 @@ public class PrincipalView {
             case 5:
                 return;
             default:
-                System.out.println("Opção inválida, digite novamente.");
+                System.err.println("Opção inválida, digite novamente.");
         }
     }
     private void cadastrarProduto() {
@@ -284,7 +281,7 @@ public class PrincipalView {
             System.out.println("Remédio tarja preta cadastrado com sucesso!");
             break;
         }
-        default -> {System.out.println("Opção inválida! Produto não cadastrado."); break;}
+        default -> {System.err.println("Opção inválida! Produto não cadastrado."); break;}
     }
   
     }
@@ -305,7 +302,7 @@ public class PrincipalView {
             case 3-> alterarProduto();
             case 4-> consultarProdutos();
             case 5-> { return; }
-            default -> System.out.println("Opção inválida, digite novamente");
+            default -> System.err.println("Opção inválida, digite novamente");
         }
     }
     private void relatorioVendas(){
@@ -314,7 +311,7 @@ public class PrincipalView {
     
     private void removerProduto(){
         if (estoque.getListaProdutos().isEmpty()) {
-            System.out.println("Nenhum produto para remover.");
+            System.out.println("Nenhum produto no estoque para remover.");
             return;
         }
         System.out.println("Informe o código do produto que deseja remover: ");
@@ -322,9 +319,9 @@ public class PrincipalView {
         estoque.removerProduto(codigo);
         System.out.println("Produto removido com sucesso!");
     }
-    private void alterarProduto(){
+    private void alterarProduto(){  
         if (estoque.getListaProdutos().isEmpty()) {
-            System.out.println("Nenhum produto para alterar.");
+            System.out.println("Nenhum produto no estoque para alterar.");
             return;
         }
         System.out.println("Informe o código do produto que deseja alterar: ");
@@ -357,7 +354,7 @@ public class PrincipalView {
             break;
 
         default:
-            System.out.println("Opção inválida.");
+            System.err.println("Opção inválida, digite novamente");
             break;
     }
     }
